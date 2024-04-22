@@ -13,6 +13,7 @@ function Login() {
     username: "",
     confirmPassword: "",
     });
+    //Setting up toast options
     const toastOptions = {
     position: "bottom-right",
     autoClose: 8000,
@@ -20,6 +21,14 @@ function Login() {
     draggable: true,
     theme: "dark",
     };
+    // Redirecting to "/" if the user is already logged in
+    useEffect(() => {
+        if (localStorage.getItem('chat-app-user')) {
+            navigate('/');
+        }
+    }, []);
+
+    //Setting up submit
     const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
