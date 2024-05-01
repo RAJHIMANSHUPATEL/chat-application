@@ -45,7 +45,7 @@ function SetAvatar() {
                 navigate("/");
             }
             else {
-                toast.error("Error setting the avatar. Please try again", toastOptions);
+                toast.error("Error setting avatar. Please try again", toastOptions);
             }
         }
 
@@ -53,7 +53,7 @@ function SetAvatar() {
     };
     
     //fetching avatars
-    async function fetchAvatar() {
+    const fetchAvatar = async ()=> {
         const data = [];
         for (let i = 0; i < 4; i++) {
         const image = await axios.get(
